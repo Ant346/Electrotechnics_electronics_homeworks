@@ -1,0 +1,57 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.figlist
+*.makefile
+*.fls
+*.fdb_latexmk
+*.auxlock
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# LaTeX distribution files
+*.cls
+*.sty
+
+# Bibliography files
+*.bib.bak
+*.bib.original
+
+# PDF files (if you want to track them, remove this line)
+# *.pdf
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# VSCode files (keep these for project setup)
+# .vscode/
+
+# Temporary files
+*~
+*.tmp
+*.temp

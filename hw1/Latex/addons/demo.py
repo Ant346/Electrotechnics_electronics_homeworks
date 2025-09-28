@@ -1,0 +1,4 @@
+class MyClass(Yourclass):
+    def __init__(self, my, yours):
+        bla = '5 1 2 3 4'
+        print bla

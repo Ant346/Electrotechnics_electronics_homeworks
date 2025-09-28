@@ -1,0 +1,76 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile LaTeX with XeLaTeX",
+            "type": "shell",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "${workspaceFolder}/Latex/Main.tex"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/Latex"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean LaTeX auxiliary files",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "Remove-Item -Path '*.aux', '*.log', '*.bbl', '*.blg', '*.toc', '*.out', '*.synctex.gz', '*.fls', '*.fdb_latexmk' -ErrorAction SilentlyContinue"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/Latex"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Open PDF",
+            "type": "shell", 
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "Start-Process '${workspaceFolder}/Latex/Main.pdf'"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Build and Open PDF",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Compile LaTeX with XeLaTeX",
+                "Open PDF"
+            ],
+            "group": "build"
+        }
+    ]
+}

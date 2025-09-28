@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=3.17cm, right=3.17cm, top=2.54cm, bottom=2.54cm]{geometry}
+\usepackage{fontspec} % Use fontspec for font selection
+\usepackage{mathptmx} % For math
+\usepackage{amsmath} % For math
+\usepackage{amsfonts} % For math
+\usepackage{chemformula} % For chemical formulas
+\usepackage{cite} % Enhanced citations
+\usepackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black]{hyperref}
+\usepackage{graphicx} % For importing graphics
+\usepackage{listings} % For code listings
+\usepackage{indentfirst} % Indent first paragraph
+\usepackage{float} % For better figure positioning
+\usepackage[font=small,labelfont=bf]{caption} % For better captions
+\usepackage[most]{tcolorbox} % For beautiful boxes
+\usepackage{multirow} % For table cell merging
+
+% Настройка подписей для русского языка
+\captionsetup[figure]{name=Рисунок}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+% \setotherlanguages{greek}
+\newfontfamily\russianfont{Times New Roman} % Set a font that supports Cyrillic
+% \newfontfamily\greekfont[Script=Greek]{Linux Libertine O}
+
+\input{./addons/python_highlight} % Custom Python highlighting library
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\setlength\parindent{24pt}
+\setlength{\parskip}{0.5em}
+\title{Домашняя работа №1. Основы электротехники и электроники}
+\author{Иванов Иван}
+\begin{document}
+    \input{title/title.tex}
+    \newpage
+    % \tableofcontents
+    % \newpage
+
+% \input{Sections/russ.tex}
+\input{Sections/1.tex}
+\newpage
+\input{Sections/example.tex}
+\end{document}

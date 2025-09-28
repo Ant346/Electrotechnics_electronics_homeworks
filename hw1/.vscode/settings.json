@@ -1,0 +1,115 @@
+{
+    // LaTeX Workshop настройки
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex", 
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "XeLaTeX → Biber → XeLaTeX×2",
+            "tools": [
+                "xelatex",
+                "biber", 
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        }
+    ],
+    
+    // Автокомпиляция
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onSucceeded",
+    
+    // Рабочая директория для компиляции
+    "latex-workshop.latex.rootFile.doNotPrompt": true,
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    
+    // Настройки просмотра PDF
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.view.pdf.scrollMode": 1,
+    "latex-workshop.view.pdf.spreadMode": 0,
+    
+    // Настройки для русского языка
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.intellisense.unimathsymbols.enabled": true,
+    
+    // Очистка временных файлов
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex.gz",
+        "*.nav"
+    ],
+    
+    // Настройки форматирования
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.lacheck.enabled": false,
+    
+    // Настройки для работы с Cyrillic
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": true,
+    
+    // Исключить PDF из отслеживания в git (дополнительно)
+    "files.watcherExclude": {
+        "**/*.pdf": true,
+        "**/*.aux": true,
+        "**/*.log": true,
+        "**/*.synctex.gz": true
+    }
+}
