@@ -31,6 +31,12 @@
     ],
     "latex-workshop.latex.recipes": [
         {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
             "name": "XeLaTeX",
             "tools": [
                 "xelatex"
@@ -44,18 +50,13 @@
                 "xelatex",
                 "xelatex"
             ]
-        },
-        {
-            "name": "PDFLaTeX",
-            "tools": [
-                "pdflatex"
-            ]
         }
     ],
     
     // Автокомпиляция
     "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.autoClean.run": "onSucceeded",
+    "latex-workshop.latex.recipe.default": "PDFLaTeX",
     
     // Рабочая директория для компиляции
     "latex-workshop.latex.rootFile.doNotPrompt": true,

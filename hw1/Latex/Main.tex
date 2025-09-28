@@ -1,10 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, left=3.17cm, right=3.17cm, top=2.54cm, bottom=2.54cm]{geometry}
-\usepackage{fontspec} % Use fontspec for font selection
+\usepackage[utf8]{inputenc} % For UTF-8 encoding
+\usepackage[T2A]{fontenc} % For Cyrillic fonts
 \usepackage{mathptmx} % For math
 \usepackage{amsmath} % For math
 \usepackage{amsfonts} % For math
-\usepackage{chemformula} % For chemical formulas
+% \usepackage{chemformula} % For chemical formulas (не используется)
 \usepackage{cite} % Enhanced citations
 \usepackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black]{hyperref}
 \usepackage{graphicx} % For importing graphics
@@ -17,13 +18,9 @@
 
 % Настройка подписей для русского языка
 \captionsetup[figure]{name=Рисунок}
-\usepackage{polyglossia}
-\setmainlanguage{russian}
-% \setotherlanguages{greek}
-\newfontfamily\russianfont{Times New Roman} % Set a font that supports Cyrillic
-% \newfontfamily\greekfont[Script=Greek]{Linux Libertine O}
+\usepackage[russian]{babel} % For Russian language support
 
-\input{./addons/python_highlight} % Custom Python highlighting library
+% \input{./addons/python_highlight} % Custom Python highlighting library (файл отсутствует)
 
 \makeatletter
 \renewcommand{\@seccntformat}[1]{}
@@ -31,6 +28,29 @@
 
 \setlength\parindent{24pt}
 \setlength{\parskip}{0.5em}
+
+% Настройка стилей заголовков - простые, без заливки
+\usepackage{titlesec}
+
+% Стиль для section - простой, без заливки
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}{1em}{}
+
+% Стиль для subsection - простой, без заливки  
+\titleformat{\subsection}
+{\large\bfseries}
+{\thesubsection}{1em}{}
+
+% Стиль для subsubsection - простой, без заливки
+\titleformat{\subsubsection}
+{\normalsize\bfseries}
+{\thesubsubsection}{1em}{}
+
+% Отступы для заголовков
+\titlespacing*{\section}{0pt}{1.5em}{0.8em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.6em}
+\titlespacing*{\subsubsection}{0pt}{1em}{0.4em}
 \title{Домашняя работа №1. Основы электротехники и электроники}
 \author{Иванов Иван}
 \begin{document}
