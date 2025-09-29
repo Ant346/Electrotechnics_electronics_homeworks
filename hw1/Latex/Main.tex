@@ -2,13 +2,16 @@
 \usepackage[a4paper, left=3.17cm, right=3.17cm, top=2.54cm, bottom=2.54cm]{geometry}
 \usepackage[utf8]{inputenc} % For UTF-8 encoding
 \usepackage[T2A]{fontenc} % For Cyrillic fonts
-\usepackage{mathptmx} % For math
+% \usepackage{mathptmx} % Removed: breaks bold Cyrillic (T2A bold shapes missing)
 \usepackage{amsmath} % For math
 \usepackage{amsfonts} % For math
+\usepackage{amssymb} % For \checkmark
 % \usepackage{chemformula} % For chemical formulas (не используется)
 \usepackage{cite} % Enhanced citations
 \usepackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black]{hyperref}
 \usepackage{graphicx} % For importing graphics
+\usepackage{svg} % SVG support for logos
+\svgsetup{inkscapeexe=inkscape}
 \usepackage{listings} % For code listings
 \usepackage{indentfirst} % Indent first paragraph
 \usepackage{float} % For better figure positioning
