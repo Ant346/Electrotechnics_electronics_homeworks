@@ -31,10 +31,10 @@
         {
             "label": "Clean LaTeX auxiliary files",
             "type": "shell",
-            "command": "powershell",
+            "command": "bash",
             "args": [
-                "-Command",
-                "Remove-Item -Path '*.aux', '*.log', '*.bbl', '*.blg', '*.toc', '*.out', '*.synctex.gz', '*.fls', '*.fdb_latexmk' -ErrorAction SilentlyContinue"
+                "-lc",
+                "rm -f *.aux *.log *.bbl *.blg *.toc *.out *.synctex.gz *.fls *.fdb_latexmk"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/Latex"
@@ -50,10 +50,10 @@
         {
             "label": "Open PDF",
             "type": "shell", 
-            "command": "powershell",
+            "command": "bash",
             "args": [
-                "-Command",
-                "Start-Process '${workspaceFolder}/Latex/Main.pdf'"
+                "-lc",
+                "xdg-open '${workspaceFolder}/Latex/Main.pdf' >/dev/null 2>&1 &"
             ],
             "group": "test",
             "presentation": {

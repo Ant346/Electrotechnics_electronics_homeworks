@@ -65,7 +65,7 @@
     // Настройки просмотра PDF
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.zoom": "page-width",
-    "latex-workshop.view.pdf.scrollMode": 1,
+    "latex-workshop.view.pdf.scrollMode": 0,
     "latex-workshop.view.pdf.spreadMode": 0,
     
     // Настройки для русского языка
