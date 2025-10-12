@@ -1,8 +1,17 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, left=3.17cm, right=3.17cm, top=2.54cm, bottom=2.54cm]{geometry}
-\usepackage[utf8]{inputenc} % For UTF-8 encoding
-\usepackage[T2A]{fontenc} % For Cyrillic fonts
-% \usepackage{mathptmx} % Removed: breaks bold Cyrillic (T2A bold shapes missing)
+% Use XeLaTeX for proper Cyrillic rendering
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+% Ensure Cyrillic shapes are taken from the main font
+\newfontfamily\cyrillicfont{Times New Roman}
+\newfontfamily\cyrillicfontsf{Arial}
+\newfontfamily\cyrillicfonttt{Consolas}
 \usepackage{amsmath} % For math
 \usepackage{amsfonts} % For math
 \usepackage{amssymb} % For \checkmark
@@ -19,9 +28,8 @@
 \usepackage[most]{tcolorbox} % For beautiful boxes
 \usepackage{multirow} % For table cell merging
 
-% Настройка подписей для русского языка
+% Подпись рисунков по-русски (polyglossia уже настраивает, оставим явную установку)
 \captionsetup[figure]{name=Рисунок}
-\usepackage[russian]{babel} % For Russian language support
 
 % \input{./addons/python_highlight} % Custom Python highlighting library (файл отсутствует)
 

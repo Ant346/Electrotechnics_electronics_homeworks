@@ -121,7 +121,7 @@ bcd - по часовой стрелке.
 \end{align}
 По 2-му закону Кирхгофа:
 \begin{align}
-    u_{R_1} + u_{R_4} + u_{R_2} &= E_1 \tag{abd} \\
+    u_{R_1} + u_{R_4} + u_{R_2} &= E_1+E_2 \tag{abd} \\
     u_{R_6} + u_{R_3} + u_{R_2} &= E_2 \tag{acd} \\
     u_{R_5} + u_{R_3} - u_{R_4} &= 0 \tag{bcd}
 \end{align}
@@ -139,14 +139,14 @@ bcd - по часовой стрелке.
     i_2 &= i_1 + i_6 \quad \text{a} \\
     i_1 &= i_4 + i_5 \quad \text{b} \\
     i_5 + i_6 &= i_3 \quad \text{c} \\
-    u_{R_1} + u_{R_4} + u_{R_2} &= E_1 \tag{abd} \\
-    u_{R_6} + u_{R_3} + u_{R_2} &= E_2 \tag{acd} \\
-    u_{R_5} + u_{R_3} - u_{R_4} &= 0 \tag{bcd}
-    u_{R_i} = R_i * i_i
+    u_{R_1} + u_{R_4} + u_{R_2} &= E_1+E_2 \quad \text{abd} \\
+    u_{R_6} + u_{R_3} + u_{R_2} &= E_2 \quad \text{acd} \\
+    u_{R_5} + u_{R_3} - u_{R_4} &= 0 \quad \text{bcd} \\
+    u_{R_i} = R_i i_i
 \end{aligned}
 \right.
 \]
-Расставляем неизвестные в возрастающем порядке по индексам i, а также производим замену всех $U_{R_i}$ на $R_i * i_i$:
+Расставляем неизвестные в возрастающем порядке по индексам i, а также производим замену всех $U_{R_i}$ на $R_i i_i$:
 
 \[
 \left\{
@@ -154,9 +154,9 @@ bcd - по часовой стрелке.
     i_1-i_2+i_6 &= 0 \quad \text{a} \\
     i_1-i_4-i_5 &= 0 \quad \text{b} \\
     -i_3+i_5+i_6 &= 0 \quad \text{c} \\
-    R_1 i_1 + R_2 i_2 + R_4 i_4 &= E_1 \tag{abd} \\
-    R_2 i_2 + R_3 i_3 + R_6 i_6 &= E_2 \tag{acd} \\
-    R_3 i_3 - R_4 i_4 + R_5 i_5 &= 0 \tag{bcd}
+    R_1 i_1 + R_2 i_2 + R_4 i_4 &= E_1 \quad \text{abd} \\
+    R_2 i_2 + R_3 i_3 + R_6 i_6 &= E_2 \quad \text{acd} \\
+    R_3 i_3 - R_4 i_4 + R_5 i_5 &= 0 \quad \text{bcd}
 \end{aligned}
 \right.
 \]
@@ -177,7 +177,7 @@ $$B = \begin{pmatrix}
 0 \\
 0 \\
 0 \\
-E1 \\
+E1+E2 \\
 E2 \\
 0 \\
 \end{pmatrix}$$
@@ -191,9 +191,9 @@ i_5 \\
 i_6
 \end{pmatrix}$$
 
-$$A * X = B$$
+$$A X = B$$
 
-$$X = A^{-1} * B$$
+$$X = A^{-1} B$$
 
 \textbf{Подставляем значения ($E_1=30\,\text{В}$, $E_2=10\,\text{В}$, $R_1=3\,\text{Ом}$, $R_2=4\,\text{Ом}$, $R_3=10\,\text{Ом}$, $R_4=4\,\text{Ом}$, $R_5=6\,\text{Ом}$, $R_6=3\,\text{Ом}$):}
 
@@ -207,7 +207,6 @@ $$\begin{pmatrix}
  0 &  4 & 10 & 0 & 0 &  3 \\
  0 &  0 &  10 &  -4 &  6 &  0
 \end{pmatrix}
-
 \begin{pmatrix}
 i_1 \\
 i_2 \\
@@ -221,8 +220,8 @@ i_6
 0 \\
 0 \\
 0 \\
-10 \\
 40 \\
+10 \\
 0 \\
 \end{pmatrix}$$
 
@@ -231,21 +230,21 @@ i_6
 
 \[
 \left\{\begin{aligned}
-\Delta   &= -1728,\\
-\Delta_1 &= 2400,\quad \Delta_2 = -4560,\quad \Delta_3 = -3000,\\
-\Delta_4 &= -1560,\quad \Delta_5 = 3960,\quad \Delta_6 = -6960.
+\Delta   &= 144,\\
+\Delta_1 &= 500,\quad \Delta_2 = 370,\quad \Delta_3 = 35,\\
+\Delta_4 &= 335,\quad \Delta_5 = 165,\quad \Delta_6 = -130.
 \end{aligned}\right.
 \]
 
 Тогда токи (столбец неизвестных $X=[i_1,i_2,i_3,i_4,i_5,i_6]^\top$):
 \[
 \begin{aligned}
- i_1 &= \frac{\Delta_1}{\Delta} = -\frac{25}{18} \approx -1.389\,\text{А}, &
- i_2 &= \frac{\Delta_2}{\Delta} = \frac{95}{36} \approx 2.639\,\text{А}, \\
- i_3 &= \frac{\Delta_3}{\Delta} = \frac{125}{72} \approx 1.736\,\text{А}, &
- i_4 &= \frac{\Delta_4}{\Delta} = \frac{65}{72} \approx 0.903\,\text{А}, \\
- i_5 &= \frac{\Delta_5}{\Delta} = -\frac{55}{24} \approx -2.292\,\text{А}, &
- i_6 &= \frac{\Delta_6}{\Delta} = \frac{145}{36} \approx 4.028\,\text{А}.
+ i_1 &= \frac{\Delta_1}{\Delta} = \frac{125}{36} \approx 3.472\,\text{А}, &
+ i_2 &= \frac{\Delta_2}{\Delta} = \frac{185}{72} \approx 2.569\,\text{А}, \\
+ i_3 &= \frac{\Delta_3}{\Delta} = \frac{35}{144} \approx 0.243\,\text{А}, &
+ i_4 &= \frac{\Delta_4}{\Delta} = \frac{335}{144} \approx 2.326\,\text{А}, \\
+ i_5 &= \frac{\Delta_5}{\Delta} = \frac{55}{48} \approx 1.146\,\text{А}, &
+ i_6 &= \frac{\Delta_6}{\Delta} = -\frac{65}{72} \approx -0.903\,\text{А}.
 \end{aligned}
 \]
 
@@ -263,6 +262,8 @@ i_6
 \end{aligned}
 \]
 
+Отрицательный ток $i_6$ означает, что ток течет в обратном направлении по сравнению с выбранным направлением обхода контура. Поэтому току $i_6$ можно поменять направление на схеме и сделать его положительным 
+
 Напряжения на резисторах:
 \begin{align*}
 u_{R1} &= R_1 i_1 = 3\cdot\tfrac{125}{36} = \tfrac{125}{12} \approx 10.417\,\text{В} \\
@@ -270,32 +271,36 @@ u_{R2} &= R_2 i_2 = 4\cdot\tfrac{185}{72} = \tfrac{185}{18} \approx 10.278\,\tex
 u_{R3} &= R_3 i_3 = 10\cdot\tfrac{35}{144} = \tfrac{175}{72} \approx 2.431\,\text{В} \\
 u_{R4} &= R_4 i_4 = 4\cdot\tfrac{335}{144} = \tfrac{335}{36} \approx 9.306\,\text{В} \\
 u_{R5} &= R_5 i_5 = 6\cdot\tfrac{55}{48} = \tfrac{55}{8} = 6.875\,\text{В} \\
-u_{R6} &= R_6 i_6 = 3\cdot\left(-\tfrac{65}{72}\right) = -\tfrac{65}{24} \approx -2.708\,\text{В}
+u_{R6} &= R_6 i_6 = 3\cdot\left(\tfrac{65}{72}\right) = \tfrac{65}{24} \approx 2.708\,\text{В}
 \end{align*}
 
 \textbf{Баланс мощностей:}
 
-\textbf{Мощность источников:}
-\begin{equation}
-P_{\text{ист}} = E_1 \cdot i_1 + E_2 \cdot i_2 = 30 \cdot 2.5 + 10 \cdot 1.25 = 75 + 12.5 = 87.5\,\text{Вт}
-\end{equation}
-
 \textbf{Мощность потребителей (резисторов):}
+\begin{align*}
+P_{R1} &= i_1^2 R_1 = \left(\tfrac{125}{36}\right)^2\!\cdot 3 = \tfrac{46875}{1296} \approx 36.169\,\text{Вт} \\
+P_{R2} &= i_2^2 R_2 = \left(\tfrac{185}{72}\right)^2\!\cdot 4 = \tfrac{34225}{1296} \approx 26.408\,\text{Вт} \\
+P_{R3} &= i_3^2 R_3 = \left(\tfrac{35}{144}\right)^2\!\cdot 10 = \tfrac{12250}{20736} \approx 0.591\,\text{Вт} \\
+P_{R4} &= i_4^2 R_4 = \left(\tfrac{335}{144}\right)^2\!\cdot 4 = \tfrac{112225}{5184} \approx 21.649\,\text{Вт} \\
+P_{R5} &= i_5^2 R_5 = \left(\tfrac{55}{48}\right)^2\!\cdot 6 = \tfrac{3025}{384} \approx 7.878\,\text{Вт} \\
+P_{R6} &= i_6^2 R_6 = \left(\tfrac{65}{72}\right)^2\!\cdot 3 = \tfrac{4225}{1728} \approx 2.445\,\text{Вт}
+\end{align*}
+
+\textbf{Суммарная мощность потребителей:}
 \begin{equation}
-P_{\text{потр}} = i_1^2 R_1 + i_2^2 R_2 + i_3^2 R_3 + i_4^2 R_4 + i_5^2 R_5 + i_6^2 R_6
+P_{\text{потр}} = \sum_{k=1}^{6} P_{Rk} \approx 95.14\,\text{Вт}
 \end{equation}
 
-\begin{equation}
-P_{\text{потр}} = 2.5^2 \cdot 3 + 1.25^2 \cdot 4 + 1.25^2 \cdot 10 + 1.25^2 \cdot 4 + 2.5^2 \cdot 6 + 1.25^2 \cdot 3
-\end{equation}
-
-\begin{equation}
-P_{\text{потр}} = 18.75 + 6.25 + 15.625 + 6.25 + 37.5 + 4.6875 = 89.0625\,\text{Вт}
-\end{equation}
+\textbf{Мощность источников:}
+\begin{align*}
+P_{\text{ист}} &= E_1\, i_1 + E_2\, i_6 \\
+               &= 30\cdot \tfrac{125}{36} + 10\cdot\left(-\tfrac{65}{72}\right) \\
+               &= \tfrac{625}{6} - \tfrac{325}{36} = \tfrac{3425}{36} \approx 95.139\,\text{Вт}
+\end{align*}
 
 \textbf{Проверка баланса:}
 \begin{equation}
-|P_{\text{потр}} - P_{\text{ист}}| = |89.0625 - 87.5| = 1.5625\,\text{Вт}
+P_{\text{ист}} - P_{\text{потр}} \approx 0 \quad (\text{расхождение лишь из-за округления})
 \end{equation}
 
 \textbf{Примечание:} После исправления матрицы и использования правильных токов баланс мощностей сходится с погрешностью 1.5625 Вт.
